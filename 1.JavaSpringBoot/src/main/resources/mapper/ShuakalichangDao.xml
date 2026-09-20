@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.ShuakalichangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.ShuakalichangEntity" id="shuakalichangMap">
+        <result property="cheweihao" column="cheweihao"/>
+        <result property="changdimingcheng" column="changdimingcheng"/>
+        <result property="chepaihaoma" column="chepaihaoma"/>
+        <result property="cheliangmingcheng" column="cheliangmingcheng"/>
+        <result property="ruchangshijian" column="ruchangshijian"/>
+        <result property="chuchangshijian" column="chuchangshijian"/>
+        <result property="jifeishizhang" column="jifeishizhang"/>
+        <result property="xiaoshijiage" column="xiaoshijiage"/>
+        <result property="shoufeijine" column="shoufeijine"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="ispay" column="ispay"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.ShuakalichangView" >
+
+		SELECT  shuakalichang.* FROM shuakalichang  shuakalichang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.ShuakalichangView" >
+		SELECT * FROM shuakalichang  shuakalichang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
